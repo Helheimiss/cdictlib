@@ -10,7 +10,7 @@
                 "${workspaceFolder}\\src\\cdictlib.c",
                 "${workspaceFolder}\\src\\main.c",
                 "-o",
-                "${workspaceFolder}\\bin\\debug\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\bin\\debug\\cdictlib.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"

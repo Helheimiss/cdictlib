@@ -69,3 +69,19 @@ int get_value(link *obj, char *add_key)
 
     return 0;
 }
+
+
+void free_all(link **obj)
+{
+    link *current = *obj;
+
+    while (current != NULL)
+    {
+        link *next = current->next; 
+        free(current->key);
+        free(current);
+        current = next;
+    }
+    
+    *obj = NULL;
+}

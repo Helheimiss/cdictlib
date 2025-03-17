@@ -1,14 +1,16 @@
 CC = gcc
+ARCH = 64
 target = cdictlib
 src = src/main.c src/cdictlib.c
-bin = bin/release/
-flags = -Wall -o $(bin)$(target).exe
+bin = bin/
+flags = -Wall -m$(ARCH) -s -o $(bin)release/$(target).exe
 
-$(shell mkdir -p bin/release)
+$(shell mkdir -p $(bin)release)
 
 all :
 	$(CC) $(src) $(flags)
 
 
-clear :
-	rm -f $(bin)*.exe
+clean :
+	rm -f $(bin)release/*.exe
+	rm -f $(bin)debug/*.exe
