@@ -1,10 +1,10 @@
 CC = gcc
-target = main
-src = src/main.c src/hashlist.c
-bin = bin/
+target = cdictlib
+src = src/main.c src/cdictlib.c
+bin = bin/release/
 flags = -Wall -o $(bin)$(target).exe
 
-$(shell mkdir -p bin)
+$(shell mkdir -p bin/release)
 
 all :
 	$(CC) $(src) $(flags)

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../include/hashlist.h"
+#include "../include/cdictlib.h"
 
 
 link *create_link(char *add_key, int add_value)

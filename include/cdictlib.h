@@ -1,5 +1,5 @@
-#ifndef LINK_LIST_H
-#define LINK_LIST_H
+#ifndef CDICTLIB_H
+#define CDICTLIB_H
 
 
 typedef struct link link;
