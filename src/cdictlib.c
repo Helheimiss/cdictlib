@@ -17,7 +17,7 @@ link *create_link(char *add_key, int add_value)
     new_link->key = (char *)malloc(strlen(add_key) + 1);
     if (new_link->key == NULL)
         return NULL;
-        
+
     strcpy(new_link->key, add_key);
     new_link->value = add_value;
     new_link->next = NULL;
@@ -112,4 +112,40 @@ void free_all(link **obj)
     }
     
     *obj = NULL;
+}
+
+
+void remove_value(link *obj, char *add_key)
+{
+    if (add_key == NULL)
+        return;
+
+    link *p = obj;
+    while (p != NULL)
+    {
+        link *removing = p->next;
+        if (removing != NULL && strcmp(removing->key, add_key) == 0)
+        {
+            link *temp = removing->next;
+            if (temp != NULL)
+            {
+                free(removing->key);
+                free(removing);
+
+                p->next = temp;
+            }
+            else if (temp == NULL)
+            {
+                free(removing->key);
+                free(removing);
+
+                p->next = NULL;
+            }
+            
+            
+            return;
+        }
+        p = p->next;
+    }
+    
 }
