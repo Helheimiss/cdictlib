@@ -22,9 +22,9 @@ int main(void)
     srand(time(NULL));
 
     link *a = create_link("test", 2);
-    set_value(a, NULL, 5);
+    set_value(a, "test", 5);
 
-    link_add(a, NULL, rand() % 100 + 1);
+    link_add(a, "first", rand() % 100 + 1);
     link_add(a, "second", rand() % 100 + 1);
     link_add(a, "third", rand() % 100 + 1);
     
