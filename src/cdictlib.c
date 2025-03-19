@@ -4,7 +4,7 @@
 #include "../include/cdictlib.h"
 
 
-link *create_link(char *add_key, int add_value)
+link *create_link(char *add_key, void *add_value)
 {
     if (add_key == NULL)
         return NULL;
@@ -27,7 +27,7 @@ link *create_link(char *add_key, int add_value)
 }
 
 
-void link_add(link *obj, char *add_key, int add_value) 
+void link_add(link *obj, char *add_key, void *add_value) 
 {
     if (add_key == NULL)
         return;
@@ -56,7 +56,7 @@ void link_add(link *obj, char *add_key, int add_value)
 }
 
 
-void set_value(link *obj, char *add_key, int add_value)
+void set_value(link *obj, char *add_key, void *add_value)
 {
     if (add_key == NULL)
         return;
@@ -76,7 +76,7 @@ void set_value(link *obj, char *add_key, int add_value)
 }
 
 
-int get_value(link *obj, char *add_key)
+void *get_value(link *obj, char *add_key)
 {
     if (add_key == NULL)
         return 0;
@@ -119,6 +119,12 @@ void remove_value(link *obj, char *add_key)
 {
     if (add_key == NULL)
         return;
+
+    if (obj != NULL && strcmp(obj->key, add_key) == 0)
+    {
+        puts("yeeep");
+    }
+    
 
     link *p = obj;
     while (p != NULL)
